@@ -22,7 +22,21 @@ public class DeviceServiceImpl implements DeviceService {
 
     @Override
     public Device save(Device device) {
+        Device tempDevice = deviceRepository.findByDeviceName(device.getDeviceName());
+        if (tempDevice != null) {
+            device.setId(tempDevice.getId());
+        }
         return deviceRepository.save(device);
+    }
+
+    @Override
+    public Device update(Device device) {
+        return deviceRepository.save(device);
+    }
+
+    @Override
+    public Device exist(String deviceName) {
+        return deviceRepository.findByDeviceName(deviceName);
     }
 
 }

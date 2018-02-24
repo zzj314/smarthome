@@ -15,6 +15,12 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <properties>
+        <aliyun-java-sdk-core.version>3.5.0</aliyun-java-sdk-core.version>
+        <aliyun-java-sdk-iot.version>4.0.0</aliyun-java-sdk-iot.version>
+        <aliyun-java-sdk-mns.version>1.1.8.4</aliyun-java-sdk-mns.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -36,6 +42,28 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <!-- AliYun Lib Start -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-iot</artifactId>
+            <version>${aliyun-java-sdk-iot.version}</version>
+        </dependency> <!-- aliyun-java-sdk-iot -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>${aliyun-java-sdk-core.version}</version>
+        </dependency> <!-- aliyun-java-sdk-core -->
+        <dependency>
+            <groupId>com.aliyun.mns</groupId>
+            <artifactId>aliyun-sdk-mns</artifactId>
+            <version>${aliyun-java-sdk-mns.version}</version>
+        </dependency> <!-- aliyun-sdk-mns -->
+        <!-- AliYun Lib End -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.41</version>
+        </dependency> <!-- fastjson -->
     </dependencies>
 
 </project>

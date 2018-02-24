@@ -23,5 +23,11 @@ public class Device {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    private Integer userId;
     private String deviceId;
+    private String deviceName;
+    private String onlineStatus;
+    private String switchStatus;
+    private String poisonValue;
+    private String lightValue;
 }

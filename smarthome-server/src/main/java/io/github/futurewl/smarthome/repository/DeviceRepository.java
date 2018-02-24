@@ -3,6 +3,8 @@ package io.github.futurewl.smarthome.repository;
 import io.github.futurewl.smarthome.dataobject.Device;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 /**
  * @author weilai <br/>
  * ==========================
@@ -12,4 +14,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * ==========================
  */
 public interface DeviceRepository extends JpaRepository<Device, Integer> {
+    Device findByDeviceName(String deviceName);
+
+    List<Device> findAllByUserId(Integer userId);
 }

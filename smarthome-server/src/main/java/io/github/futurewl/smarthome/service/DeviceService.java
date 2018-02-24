@@ -3,6 +3,8 @@ package io.github.futurewl.smarthome.service;
 import io.github.futurewl.smarthome.dataobject.Device;
 
 /**
+ * 用户服务
+ *
  * @author weilai <br/>
  * ==========================
  * Created with IDEA
@@ -12,4 +14,8 @@ import io.github.futurewl.smarthome.dataobject.Device;
  */
 public interface DeviceService {
     Device save(Device device);
+
+    Device update(Device device);
+
+    Device exist(String deviceName);
 }

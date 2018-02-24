@@ -1,11 +1,13 @@
 package io.github.futurewl.smarthome.dataobject;
 
+import io.github.futurewl.smarthome.utils.Base64Util;
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.UnsupportedEncodingException;
 
 
 /**
@@ -25,4 +27,18 @@ public class Message {
     private String messageType;
     private String payload;
     private String timestamp;
+
+    @Override
+    public String toString() {
+        try {
+            payload = Base64Util.decode(payload, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return "MessageInfo{" +
+                "payload='" + payload + '\'' +
+                ", messagetype='" + messageType + '\'' +
+                ", timestamp='" + timestamp + '\'' +
+                '}';
+    }
 }
