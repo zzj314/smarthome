@@ -1,3 +1,5 @@
 spring:
   profiles:
     include: jpa
+  thymeleaf:
+    mode: LEGACYHTML5
