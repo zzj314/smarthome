@@ -9,6 +9,8 @@ import io.github.futurewl.smarthome.utils.AliYunIOTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author weilai <br/>
  * ==========================
@@ -22,6 +24,12 @@ public class DeviceServiceImpl implements DeviceService {
 
     @Autowired
     private DeviceRepository deviceRepository;
+
+    @Override
+    public List<Device> findAllByUserId(Integer userId) {
+
+        return deviceRepository.findAllByUserId(userId);
+    }
 
     @Override
     public Device find(Integer deviceId) {

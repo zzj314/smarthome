@@ -2,6 +2,8 @@ package io.github.futurewl.smarthome.service;
 
 import io.github.futurewl.smarthome.dataobject.Device;
 
+import java.util.List;
+
 /**
  * 用户服务
  *
@@ -13,6 +15,8 @@ import io.github.futurewl.smarthome.dataobject.Device;
  * ==========================
  */
 public interface DeviceService {
+
+    List<Device> findAllByUserId(Integer userId);
 
     Device find(Integer deviceId);
 
