@@ -13,9 +13,14 @@ import io.github.futurewl.smarthome.dataobject.Device;
  * ==========================
  */
 public interface DeviceService {
+
+    Device find(Integer deviceId);
+
     Device save(Device device);
 
     Device update(Device device);
 
     Device exist(String deviceName);
+
+    String action(String deviceName, String option);
 }
