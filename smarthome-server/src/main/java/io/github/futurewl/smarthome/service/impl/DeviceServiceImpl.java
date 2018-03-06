@@ -36,6 +36,10 @@ public class DeviceServiceImpl implements DeviceService {
 
     @Override
     public Device update(Device device) {
+        Device tempDevice = deviceRepository.findByDeviceName(device.getDeviceName());
+        if (tempDevice != null) {
+            device.setId(tempDevice.getId());
+        }
         return deviceRepository.save(device);
     }
 

@@ -27,7 +27,7 @@
 </div>
 <script>
 
-    var onlineStatus = document.getElementById('online-status').innerText;
+    var onlineStatus = document.getElementById('online-status');
     var switchStatus = document.getElementById('switch-status').innerText;
     var btn_opt = document.getElementById('btn_option');
     var deviceName = document.getElementById('deviceName').innerText;
@@ -37,11 +37,14 @@
 
 
     function loading() {
-        if (onlineStatus === 'offline') {
-            btn_opt.setAttribute('disabled', 'disabled')
+        if (onlineStatus.innerText === 'offline') {
+            onlineStatus.innerText = '离线';
+            btn_opt.setAttribute('disabled', 'disabled');
+            lightValue.innerHTML = '0';
+            poisonValue.innerHTML = '0';
+        }else{
+            onlineStatus.innerText = '在线';
         }
-        lightValue.innerHTML = '0';
-        poisonValue.innerHTML = '0';
     }
 
     function option() {
