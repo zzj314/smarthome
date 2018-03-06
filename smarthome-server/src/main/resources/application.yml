@@ -3,3 +3,5 @@ spring:
     include: jpa
   thymeleaf:
     mode: LEGACYHTML5
+server:
+  port: 7091
