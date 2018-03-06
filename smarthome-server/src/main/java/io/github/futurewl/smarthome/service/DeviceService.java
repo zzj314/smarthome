@@ -22,6 +22,8 @@ public interface DeviceService {
 
     Device save(Device device);
 
+    Device update(Device device);
+
     Device exist(String deviceName);
 
     String action(String deviceName, String option);

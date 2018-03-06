@@ -24,7 +24,6 @@ public class DeviceServiceImpl implements DeviceService {
     @Autowired
     private DeviceRepository deviceRepository;
 
-
     @Override
     public Device find(Integer deviceId) {
         return deviceRepository.findOne(deviceId);
@@ -33,6 +32,11 @@ public class DeviceServiceImpl implements DeviceService {
     @Override
     public List<Device> findAll() {
         return deviceRepository.findAll();
+    }
+
+    @Override
+    public Device update(Device device) {
+        return deviceRepository.save(device);
     }
 
     @Override

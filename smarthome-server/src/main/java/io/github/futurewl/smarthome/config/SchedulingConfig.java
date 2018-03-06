@@ -70,6 +70,7 @@ public class SchedulingConfig {
                 StatusMessage statusMessage = JSON.parseObject(message.getPayload(), StatusMessage.class);
                 device.setDeviceName(statusMessage.getDeviceName());
                 device.setOnlineStatus(statusMessage.getStatus());
+                deviceService.save(device);
             } else if (message.getMessageType().equals("upload")) {
                 String payload = message.getPayload();
                 String[] items = payload.split(",");
@@ -77,8 +78,8 @@ public class SchedulingConfig {
                 device.setPoisonValue(items[1]);
                 device.setLightValue(items[2]);
                 device.setSwitchStatus(items[3]);
+                deviceService.update(device);
             }
-            deviceService.save(device);
 
 
             //从队列中删除消息
