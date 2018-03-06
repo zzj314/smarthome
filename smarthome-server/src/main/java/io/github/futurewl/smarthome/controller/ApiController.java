@@ -30,7 +30,7 @@ public class ApiController {
      * @param option
      * @return
      */
-    @PostMapping("/action")
+    @GetMapping("/action")
     public String action(String deviceName, String option) {
         String result;
         result = deviceService.action(deviceName, option);
