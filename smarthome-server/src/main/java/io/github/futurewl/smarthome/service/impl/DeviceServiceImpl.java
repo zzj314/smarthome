@@ -1,6 +1,5 @@
 package io.github.futurewl.smarthome.service.impl;
 
-import com.aliyuncs.iot.model.v20170420.PubRequest;
 import com.aliyuncs.iot.model.v20170420.PubResponse;
 import io.github.futurewl.smarthome.dataobject.Device;
 import io.github.futurewl.smarthome.repository.DeviceRepository;
@@ -25,15 +24,15 @@ public class DeviceServiceImpl implements DeviceService {
     @Autowired
     private DeviceRepository deviceRepository;
 
-    @Override
-    public List<Device> findAllByUserId(Integer userId) {
-
-        return deviceRepository.findAllByUserId(userId);
-    }
 
     @Override
     public Device find(Integer deviceId) {
-        return null;
+        return deviceRepository.findOne(deviceId);
+    }
+
+    @Override
+    public List<Device> findAll() {
+        return deviceRepository.findAll();
     }
 
     @Override
@@ -42,11 +41,6 @@ public class DeviceServiceImpl implements DeviceService {
         if (tempDevice != null) {
             device.setId(tempDevice.getId());
         }
-        return deviceRepository.save(device);
-    }
-
-    @Override
-    public Device update(Device device) {
         return deviceRepository.save(device);
     }
 

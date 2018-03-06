@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>智慧燃气 - 设备列表</title>
+    <link rel="stylesheet" th:href="@{css/main.css}">
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1 class="header">设备列表</h1>
+    <div>
+        <div th:each="device : ${devices}">
+            <div class="row">
+                <a th:href="@{deviceInfo(deviceId=${device.id})}" href="#"><span th:text="${device.deviceName}"></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Powered by: BST 蓝色技术工作室</p>
+    </div>
+</div>
+</body>
+</html>

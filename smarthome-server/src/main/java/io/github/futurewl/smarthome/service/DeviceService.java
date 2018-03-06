@@ -16,13 +16,11 @@ import java.util.List;
  */
 public interface DeviceService {
 
-    List<Device> findAllByUserId(Integer userId);
-
     Device find(Integer deviceId);
 
-    Device save(Device device);
+    List<Device> findAll();
 
-    Device update(Device device);
+    Device save(Device device);
 
     Device exist(String deviceName);
 

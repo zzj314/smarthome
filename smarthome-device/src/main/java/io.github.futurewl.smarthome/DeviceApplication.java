@@ -28,11 +28,11 @@ import java.util.concurrent.TimeUnit;
 public class DeviceApplication {
 
     /******这里是客户端需要的参数*******/
-    public static String deviceName = "test3";
+    public static String deviceName = "test1";
     public static String productKey = "Yy2T9M7mKHJ";
-    public static String secret = "UjfduI0amSTriLf0vWC8UKHOowKT7foU"; // test3
+//        public static String secret = "UjfduI0amSTriLf0vWC8UKHOowKT7foU"; // test3
 //    public static String secret = "UVFAkvHNWhdOUn8LHjsf1tvjM4dmFq1O";// test2
-//    public static String secret = "NUQbSiV34TUzvTN2DAVNCLa3qFbuFnLi"; // test1
+    public static String secret = "NUQbSiV34TUzvTN2DAVNCLa3qFbuFnLi"; // test1
 
     //用于测试的topic
     private static String subTopic = "/" + productKey + "/" + deviceName + "/get";
@@ -64,7 +64,7 @@ public class DeviceApplication {
         connectMqtt(targetServer, mqttclientId, mqttUsername, mqttPassword, deviceName);
     }
 
-    public static void connectMqtt( String url, String clientId, String mqttUsername, String mqttPassword, final String deviceName ) throws Exception {
+    public static void connectMqtt(String url, String clientId, String mqttUsername, String mqttPassword, final String deviceName) throws Exception {
         MemoryPersistence persistence = new MemoryPersistence();
         SSLSocketFactory socketFactory = createSSLSocket();
         final MqttClient sampleClient = new MqttClient(url, clientId, persistence);
@@ -108,7 +108,7 @@ public class DeviceApplication {
         LogUtil.print("连接成功:---");
 
         //这里测试发送一条消息
-        String content = "test3,0,999,1";
+        String content = deviceName + ",0,999,1";
 
         MqttMessage message = new MqttMessage(content.getBytes("utf-8"));
         message.setQos(0);

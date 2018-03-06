@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.*;
-
 /**
  * @author weilai <br/>
  * ==========================
@@ -30,9 +28,13 @@ public class DeviceServiceTest {
     @Test
     public void save() {
         Device device = new Device();
-        device.setDeviceId("yckj");
         Device device1 = deviceService.save(device);
         Assert.assertNotNull(device1);
         log.debug(device1.toString());
+    }
+
+    @Test
+    public void findAll(){
+       Assert.assertNotNull(deviceService.findAll());
     }
 }

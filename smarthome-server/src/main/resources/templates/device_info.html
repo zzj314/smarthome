@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title th:text="'智慧燃气 - '+${device.deviceName}"></title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <style>
+        .device_info li {
+            margin: 5px;
+            padding: 10px;
+        }
+
+        .btns {
+            padding: 0 10px;
+        }
+
+        .btns > button {
+            display: block;
+            width: 100%;
+            height: 30px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1 class="header" th:text="${device.deviceName}"></h1>
+    <ul class="device_info">
+        <li class="online-status"> 在线状态： <span th:text="${device.onlineStatus}"></span></li>
+        <li class="switch-status"> 开关状态： <span th:text="${device.switchStatus}?'开启':'关闭'"></span></li>
+        <li class="light-value"> 易燃指数：<span th:text="${device.lightValue}"></span></li>
+        <li class="poison-value"> 有毒指数：<span th:text="${device.poisonValue}"></span></li>
+    </ul>
+    <div class="btns">
+        <button id="btn_reload" onclick="location.reload();">刷新</button>
+        <button id="btn_back" onclick="location.href='/deviceList';">返回列表</button>
+    </div>
+    <div class="footer">
+        <p>Powered by: BST 蓝色技术工作室</p>
+    </div>
+</div>
+
+</body>
+</html>
