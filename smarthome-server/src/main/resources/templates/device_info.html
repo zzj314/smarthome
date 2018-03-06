@@ -31,12 +31,17 @@
     var switchStatus = document.getElementById('switch-status').innerText;
     var btn_opt = document.getElementById('btn_option');
     var deviceName = document.getElementById('deviceName').innerText;
+    var lightValue = document.getElementById('light-value');
+    var poisonValue = document.getElementById('poison-value');
+
 
 
     function loading() {
         if (onlineStatus === 'offline') {
             btn_opt.setAttribute('disabled', 'disabled')
         }
+        lightValue.innerHTML = '0';
+        poisonValue.innerHTML = '0';
     }
 
     function option() {
